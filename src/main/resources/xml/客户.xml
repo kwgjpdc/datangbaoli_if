@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<ufinterface account="develop" billtype="customer" businessunitcode="1" filename="" groupcode="1" isexchange="Y" orgcode="1" receiver="1" replace="Y" roottag="" sender="DTZC">
+    <bill id="1qaz1qaz">
+        <billhead>
+            <!--所属集团,最大长度为20,类型为:String-->
+            <pk_group>1</pk_group>
+            <!--所属组织,最大长度为20,类型为:String-->
+            <pk_org>1</pk_org>
+            <!--客户编码,最大长度为40,类型为:String-->
+            <code>01qaz</code>
+            <!--客户名称,最大长度为200,类型为:String-->
+            <name>用友测试0</name>
+            <!--客户简称,最大长度为200,类型为:String-->
+            <shortname>测试3</shortname>
+            <!--助记码,最大长度为50,类型为:String-->
+            <mnecode></mnecode>
+            <!--客户基本分类,最大长度为20,类型为:String-->
+            <pk_custclass>12</pk_custclass>
+            <!--地区分类,最大长度为20,类型为:String-->
+            <pk_areacl></pk_areacl>
+            <!--供应商,最大长度为1,类型为:UFBoolean-->
+            <issupplier>N</issupplier>
+            <!--对应供应商,最大长度为20,类型为:String-->
+            <pk_supplier></pk_supplier>
+            <!--客户类型,最大长度为1  0-外部单位 类为:Integer-->
+            <custprop>0</custprop>
+            <!--对应财务组织,最大长度为20,类型为:String-->
+            <pk_financeorg></pk_financeorg>
+            <!--纳税人登记号,最大长度为20,类型为:String-->
+            <taxpayerid></taxpayerid>
+            <!--上级客户,最大长度为20,类型为:String-->
+            <pk_customer_main></pk_customer_main>
+            <!--所属行业,最大长度为20,类型为:String-->
+            <trade></trade>
+            <!--散户,最大长度为1,类型为:UFBoolean-->
+            <isfreecust>N</isfreecust>
+            <!--注册资金,最大长度为14,类型为:UFDouble-->
+            <registerfund></registerfund>
+            <!--法人,最大长度为20,类型为:String-->
+            <legalbody></legalbody>
+            <!--经济类型,最大长度为20,类型为:String-->
+            <ecotypesincevfive></ecotypesincevfive>
+            <!--客户税类,最大长度为20,类型为:String-->
+            <pk_custtaxes></pk_custtaxes>            
+          
+            <!--企业地址主键，最大长度为20,类型为:String-->
+            <corpaddress></corpaddress>            
+            <!--Web网址,最大长度为60,类型为:String-->
+            <url>www.ufida.com.cn</url>
+            <!--电话1,最大长度为50,类型为:String-->
+            <tel1>110</tel1>
+            <!--电话2,最大长度为50,类型为:String-->
+            <tel2>110</tel2>
+            <!--电话3,最大长度为50,类型为:String-->
+            <tel3>a</tel3>
+            <!--传真1,最大长度为50,类型为:String-->
+            <fax1>a</fax1>
+            <!--传真2,最大长度为50,类型为:String-->
+            <fax2>a</fax2>
+            <!--e-mail地址,最大长度为50,类型为:String-->
+            <email>a</email>
+            <!--国家/地区,最大长度为20,类型为:String-->
+            <pk_country>CN</pk_country>
+            <!--时区,最大长度为20,类型为:String-->
+            <pk_timezone>P0800</pk_timezone>
+            <!--数据格式,最大长度为20,类型为:String-->
+            <pk_format>ZH-CN</pk_format>
+            <memo>
+            </memo>
+            <!--冻结标志,最大长度为1,类型为:UFBoolean-->
+            <frozenflag>N</frozenflag>
+            <!--启用状态,最大长度为0,类型为:Integer-->
+            <enablestate>2</enablestate>            
+          	
+        </billhead>
+    </bill>
+</ufinterface>

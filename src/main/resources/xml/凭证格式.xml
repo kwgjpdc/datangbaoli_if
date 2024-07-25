@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<ufinterface account="develop" billtype="vouchergl" businessunitcode="058702056" filename="" groupcode="1" isexchange="Y" orgcode="058702056" receiver="058702056" replace="Y" roottag="voucher" sender="DTZC">
+	<voucher id=''>
+     <!--凭证主键对应-->
+		<voucher_head>
+			<!--凭证类别 非空   （凭证类别）-->
+			<pk_vouchertype>01</pk_vouchertype>
+			<!--会计年度 非空-->
+			<year>2012</year>
+			<!--来源系统 非空  只支持模块编号-->
+			<pk_system>GL</pk_system>
+			<!--凭证类型值 0：正常凭证 3：数量调整凭证 不可空-->
+			<voucherkind>0</voucherkind>
+			<!--核算账簿 非空 （账簿_财务核算账簿）-->
+			<pk_accountingbook>058702056-0001</pk_accountingbook>
+			<!--作废标志 可空-->
+			<discardflag>N</discardflag>
+			<!-- 会计期间 非空-->
+			<period>02</period>
+			<!-- 凭证号为空自动分配 非空：按凭证号处理 -->
+			<no>0</no>
+			<!-- 附单据数 可空-->
+			<attachment>0</attachment>
+			<!-- 制单日期 非空-->
+			<prepareddate>2012-02-22</prepareddate>
+			<!-- 制单人 非空  （用户编码）FSSC财务共享中心-->
+			<pk_prepared>lcq</pk_prepared>
+			<!-- 出纳 （用户）-->
+			<pk_casher></pk_casher>
+			<!-- 签字标志 -->
+			<signflag>N</signflag>
+			<!-- 审核人 （用户）-->
+			<pk_checked></pk_checked>
+			<!-- 记账日期 -->
+			<tallydate></tallydate>
+			<!-- 记账人 （用户）-->
+			<pk_manager></pk_manager>
+			<memo1></memo1>
+			<memo2></memo2>
+			<reserve1></reserve1>
+			<reserve2>N</reserve2>
+			<siscardflag />
+			<!-- 所属组织 非空 （组织） -->
+			<pk_org>058702056</pk_org>
+			<!-- 所集团  如果不输集团取当前登陆集团-->
+			<pk_group>1</pk_group>
+			<details>
+			<!-- 借方分录   -->
+				<item>
+					<!-- 分录号 非空-->
+					<detailindex>1</detailindex>
+					<!-- 摘要 非空-->					
+					<explanation>取备用金</explanation>
+					<!-- 业务日期 可空-->
+					<verifydate></verifydate>
+					<!-- 单价 可空-->
+					<price>0.00000000</price>
+					<!-- 折本汇率 可空-->
+					<excrate2>1</excrate2>
+					<!-- 借方数量 可空-->
+					<debitquantity>0.00000000</debitquantity>
+					 <!-- 原币借方金额 不可空-->
+					<debitamount>8000</debitamount>
+					<!-- 本币借方金额 不可空-->
+					<localdebitamount>8000</localdebitamount>
+					<!-- 集团本币借方金额 可空-->
+					<groupdebitamount>19.00000000</groupdebitamount>
+					<!-- 全局本币借方金额 可空-->
+					<globaldebitamount>19.00000000</globaldebitamount>
+					<!-- 币种 非空 人民币CNY 美元 USD-->
+					<pk_currtype>CNY</pk_currtype>
+					<!-- 科目 非空 -->
+					<pk_accasoa>1001</pk_accasoa>
+					<!-- 金额必须有一方不为空 -->
+					<ass>
+						<item>
+							<!-- 辅助核算类型    (会计科目辅助核算)  -->
+							<pk_Checktype>0007</pk_Checktype>
+							<!-- 辅助核算值    （档案转换） -->
+							<pk_Checkvalue>luotest</pk_Checkvalue>
+						</item>
+						<item>
+							<pk_Checktype>0007</pk_Checktype>
+							<pk_Checkvalue>luotest</pk_Checkvalue>
+						</item>
+						<item>
+							<pk_Checktype>0007</pk_Checktype>
+							<pk_Checkvalue>luotest</pk_Checkvalue>
+						</item>
+					</ass>
+					
+					<cashFlow>
+                <item>
+                                             <!--币种,最大长度为64,类型为:String-->
+                                              <m_pk_currtype>a</m_pk_currtype>
+                                             <!--原币,最大长度为64,类型为:Double-->
+                                              <money>0.00000000</money>
+                                            
+                                             <!--全局本币,最大长度为64,类型为:Double-->
+                                              <moneyglobal>0.00000000</moneyglobal>
+                                             <!--集团本币,最大长度为64,类型为:Double-->
+                                              <moneygroup>0.00000000</moneygroup>
+                                             
+                                               <!--本币,最大长度为64,类型为:Double-->
+                                              <moneymain>0.00000000</moneymain>
+                                             <!--现金主键,最大长度为64,类型为:String-->
+                                              <pk_cashflow>编码</pk_cashflow>
+                                         </item>
+                                       </cashFlow>
+				</item>
+				<!-- 贷方分录   -->
+				<item>
+					<!-- 贷方数量 可空-->
+					<creditquantity>0.00000000</creditquantity>
+					<!-- 原币贷方金额 可空-->
+					<creditamount>8000</creditamount>
+					<!-- 本币贷方金额 可空-->
+					<localcreditamount>8000</localcreditamount>
+					<!-- 集团本币贷方金额 可空-->
+					<groupcreditamount>19.00000000</groupcreditamount>
+					<!-- 全局本币贷方金额 可空-->
+					<globalcreditamount>19.00000000</globalcreditamount>
+					<!-- 分录号 非空-->
+					<detailindex>2</detailindex>
+					<!-- 摘要 非空-->	
+					<explanation>取备用金</explanation>
+					<!-- 业务日期 可空-->
+					<verifydate></verifydate>
+					<!-- 单价 可空-->
+					<price>0.00000000</price>
+					<!-- 折本汇率 可空-->
+					<excrate2>1</excrate2>
+					<!-- 币种 非空-->
+					<pk_currtype>人民币</pk_currtype>
+					<!-- 科目 非空-->
+					<pk_accasoa>1002</pk_accasoa>
+					<ass>
+						<item>
+							<checktypename>4</checktypename>
+							<checkvaluecode>1011</checkvaluecode>
+						</item>
+					</ass>
+					<cashFlow>
+                        <item>
+                            <!--币种,最大长度为64,类型为:String-->
+                            <m_pk_currtype>a</m_pk_currtype>
+                            <!--原币,最大长度为64,类型为:Double-->
+                            <money>0.00000000</money>
+                            <!--全局本币,最大长度为64,类型为:Double-->
+                            <moneyglobal>0.00000000</moneyglobal>
+                            <!--集团本币,最大长度为64,类型为:Double-->
+                            <moneygroup>0.00000000</moneygroup>
+                            <!--本币,最大长度为64,类型为:Double-->
+                            <moneymain>0.00000000</moneymain>
+                            <!--现金主键,最大长度为64,类型为:String-->
+                            <pk_cashflow>a</pk_cashflow>
+                        </item>
+                 </cashFlow>
+				</item>
+			</details>
+		</voucher_head>
+	</voucher>
+</ufinterface>
