@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding='UTF-8'?>
-<ufinterface account="develop" billtype="customer" businessunitcode="1" filename="" groupcode="1" isexchange="Y" orgcode="1" receiver="1" replace="Y" roottag="" sender="DTZC">
+<ufinterface account="develop" billtype="customer" businessunitcode="1" filename="" groupcode="1" isexchange="Y"
+             orgcode="1" receiver="1" replace="Y" roottag="" sender="DTZC">
     <bill id="1qaz1qaz">
         <billhead>
             <!--所属集团,最大长度为20,类型为:String-->
@@ -41,10 +42,10 @@
             <!--经济类型,最大长度为20,类型为:String-->
             <ecotypesincevfive></ecotypesincevfive>
             <!--客户税类,最大长度为20,类型为:String-->
-            <pk_custtaxes></pk_custtaxes>            
-          
+            <pk_custtaxes></pk_custtaxes>
+
             <!--企业地址主键，最大长度为20,类型为:String-->
-            <corpaddress></corpaddress>            
+            <corpaddress></corpaddress>
             <!--Web网址,最大长度为60,类型为:String-->
             <url>www.ufida.com.cn</url>
             <!--电话1,最大长度为50,类型为:String-->
@@ -70,8 +71,8 @@
             <!--冻结标志,最大长度为1,类型为:UFBoolean-->
             <frozenflag>N</frozenflag>
             <!--启用状态,最大长度为0,类型为:Integer-->
-            <enablestate>2</enablestate>            
-          	
+            <enablestate>2</enablestate>
+
         </billhead>
     </bill>
 </ufinterface>

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding='UTF-8'?>
-<ufinterface account="develop" billtype="supplier" filename="" groupcode="1" isexchange="Y" replace="Y" roottag="" sender="DTZC">
+<ufinterface account="develop" billtype="supplier" filename="" groupcode="1" isexchange="Y" replace="Y" roottag=""
+             sender="DTZC">
     <bill id="123123123123">
         <billhead>
             <!--所属集团,最大长度为20,类型为:String-->
@@ -52,7 +53,7 @@
             <url>a</url>
             <memo>
             </memo>
-          
+
             <!--电话1,最大长度为50,类型为:String-->
             <tel1></tel1>
             <!--电话2,最大长度为50,类型为:String-->
@@ -73,7 +74,7 @@
             <pk_format>ZH-CN</pk_format>
             <!--启用状态,最大长度为0,类型为:Integer-->
             <enablestate>2</enablestate>
-          
+
         </billhead>
     </bill>
 

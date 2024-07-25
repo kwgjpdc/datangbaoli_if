@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding='UTF-8'?>
-<ufinterface account="develop" billtype="defdoc" businessunitcode="058702056" filename="" groupcode="1" isexchange="Y" orgcode="058702056" receiver="058702056" replace="Y" roottag="rootorg" sender="DTZC">
+<ufinterface account="develop" billtype="defdoc" businessunitcode="058702056" filename="" groupcode="1" isexchange="Y"
+             orgcode="058702056" receiver="058702056" replace="Y" roottag="rootorg" sender="DTZC">
     <bill id="123123">
         <billhead>
             <!--自定义档案列表主键,最大长度为20,类型为:String-->
-			<!--租赁合同=zlht  融资合同=rzht-->
+            <!--租赁合同=zlht  融资合同=rzht-->
             <pk_defdoclist>zlht</pk_defdoclist>
             <pk_defdoc></pk_defdoc>
             <!--所属集团,最大长度为20,类型为:String-->
@@ -24,5 +25,5 @@
             <memo>test</memo>
         </billhead>
     </bill>
-   
+
 </ufinterface>
