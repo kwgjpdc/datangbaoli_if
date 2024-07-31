@@ -43,11 +43,6 @@ public class RmController {
     @Value("${api.rm.cis}")
     private String cisUrl;
 
-    /**
-     * 台账信息同步
-     */
-    @Value("${api.rm.lis}")
-    private String lisUrl;
 
     /**
      * 信用评估(调用第三方接口参数以及响应)<br>
