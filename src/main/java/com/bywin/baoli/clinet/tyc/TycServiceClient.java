@@ -1,23 +1,13 @@
 package com.bywin.baoli.clinet.tyc;
 
-import cn.hutool.http.HttpException;
-import cn.hutool.http.HttpRequest;
-import cn.hutool.json.JSONException;
 import cn.hutool.json.JSONObject;
-import cn.hutool.json.JSONUtil;
-import com.bywin.baoli.aspect.WebLog;
-import com.bywin.baoli.clinet.tyc.dto.TycVo;
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-import okhttp3.ResponseBody;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Objects;
 
 

@@ -1,6 +1,7 @@
 package com.bywin.baoli.common.res;
 
 import cn.hutool.core.util.StrUtil;
+import cn.hutool.json.JSONUtil;
 import com.sun.istack.internal.NotNull;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.MethodParameter;
@@ -15,6 +16,8 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.LinkedHashMap;
+
+import static cn.hutool.http.ContentType.JSON;
 
 
 /**
@@ -73,6 +76,10 @@ public class ResponseResultHandler implements ResponseBodyAdvice<Object> {
                 return new Result(status, "请求：" + path + ",错误：" + (StrUtil.isNotBlank(error) ?
                         error : message));
             }
+        }
+        if (body instanceof String) {
+            Result result = new Result(ResultCode.SUCCESS, body);
+            return JSONUtil.toJsonStr(result);
         }
         return new Result(ResultCode.SUCCESS, body);
     }

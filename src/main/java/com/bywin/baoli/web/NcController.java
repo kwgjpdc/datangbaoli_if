@@ -9,8 +9,6 @@ import com.bywin.baoli.clinet.nc.xmlgenerate.BussGenerator;
 import com.bywin.baoli.clinet.nc.xmlgenerate.FundRepayVoucherGenerator;
 import com.bywin.baoli.clinet.nc.xmlgenerate.SupplierGenerator;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -40,9 +38,6 @@ public class NcController {
     @Value("${finance.nc.api.cim}")
     private String ncUrl;
 
-    @Value("${nc.dict.sender}")
-    private String sender;
-
 
     @PostMapping("/send/xml")
     public Object creditAssessment(HttpServletRequest request, @RequestBody NcDto ncDto) {
@@ -56,19 +51,19 @@ public class NcController {
             //合同
             case "A":
                 //处理合同xml
-                String strXml = BussGenerator.getStrXml(ncDto.getCode(), ncDto.getName(), ncDto.getBillId(), ncDto.getDefdoc(), ncDto.getReplace());
+                String strXml = BussGenerator.getStrXml(ncDto);
                 log.info("合同XML:{}", strXml);
                 js = ncServiceClient.sendXml(strXml, ncUrl, token);
                 break;
             //银行账户
             case "B":
-                String clientXml = BankAccountGenerator.getStrXml(ncDto.getCode(), ncDto.getName(), ncDto.getBillId(), ncDto.getReplace());
+                String clientXml = BankAccountGenerator.getStrXml(ncDto.getPkGroup(), ncDto.getName(), ncDto.getBillId(), ncDto.getReplace());
                 log.info("银行账户XML:{}", clientXml);
                 js = ncServiceClient.sendXml(clientXml, ncUrl, token);
                 break;
             //供应商
             case "C":
-                String supplierXml = SupplierGenerator.getStrXml(ncDto.getCode(), ncDto.getName(), ncDto.getBillId(), ncDto.getReplace());
+                String supplierXml = SupplierGenerator.getStrXml(ncDto.getPkGroup(), ncDto.getName(), ncDto.getBillId(), ncDto.getReplace());
                 log.info("供应商XML:{}", supplierXml);
                 js = ncServiceClient.sendXml(supplierXml, ncUrl, token);
                 break;
@@ -90,6 +85,11 @@ public class NcController {
                 break;
         }
         return js;
+    }
+
+    @PostMapping("/test")
+    public String generateVoucherXml() {
+        return "ceshi";
     }
 
 }

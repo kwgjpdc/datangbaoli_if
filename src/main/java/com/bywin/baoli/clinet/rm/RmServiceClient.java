@@ -6,14 +6,11 @@ import cn.hutool.http.HttpRequest;
 import cn.hutool.json.JSONException;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
-import com.bywin.baoli.aspect.WebLog;
 import com.bywin.baoli.clinet.rm.dto.CasDto;
 import com.bywin.baoli.clinet.rm.dto.CisDto;
 import com.bywin.baoli.clinet.rm.dto.SciDto;
 import com.bywin.baoli.utils.DESUtils;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 
@@ -33,7 +30,6 @@ public class RmServiceClient {
      * @param token               授权token
      * @return
      */
-    @WebLog(description = "信用评估", urlPath = "/rms/rwfs/blGeneralAuditCheck.json")
     public JSONObject creditAssessment(CasDto casDto, String creditAssessmentURL, String token) {
         JSONObject js = null;
         try {
@@ -60,7 +56,6 @@ public class RmServiceClient {
      * @param token
      * @return
      */
-    @WebLog(description = "客户信息同步", urlPath = "/rms/rwfs/syncCustomerExtraInfo.json")
     public JSONObject customerInfoSync(SciDto custPo, String customerInfoSyncURL, String token) {
         JSONObject js = null;
         try {
@@ -74,7 +69,6 @@ public class RmServiceClient {
             String result2 = HttpRequest.post(customerInfoSyncURL)
                     .header("token", token)//头信息，多个头信息多次调用此方法即可
                     .body(jsonStr)//表单内容
-                    .timeout(20000)//超时毫秒
                     .execute().body();
             js = JSONUtil.parseObj(result2);
         } catch (JSONException e) {
@@ -96,7 +90,6 @@ public class RmServiceClient {
         }
     }
 
-    @WebLog(description = "授信信息同步", urlPath = "/rms/rwfs/blGeneralAuditCheck.json")
     public JSONObject csiSync(CisDto cisDto, String cisURL, String token) {
         JSONObject js = null;
         try {
