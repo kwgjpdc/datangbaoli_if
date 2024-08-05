@@ -11,6 +11,7 @@ import com.bywin.baoli.clinet.rm.dto.CasDto;
 import com.bywin.baoli.clinet.rm.dto.CisDto;
 import com.bywin.baoli.clinet.rm.dto.SciDto;
 import com.bywin.baoli.utils.DESUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -19,9 +20,9 @@ import org.springframework.stereotype.Service;
 /**
  * 大唐风控远程接口调用
  */
+@Slf4j
 @Service
 public class RmServiceClient {
-    private static Logger log = LoggerFactory.getLogger(RmServiceClient.class);
 
 
     /**

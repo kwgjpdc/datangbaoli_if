@@ -7,6 +7,7 @@ import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.bywin.baoli.aspect.WebLog;
 import com.bywin.baoli.clinet.tyc.dto.TycVo;
+import lombok.extern.slf4j.Slf4j;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -26,9 +27,9 @@ import java.util.Objects;
  * @description: 天眼查相关接口
  * @date 2024/7/31 下午3:48
  */
+@Slf4j
 @Service
 public class TycServiceClient {
-    private static Logger log = LoggerFactory.getLogger(TycServiceClient.class);
 
     /**
      * @description:

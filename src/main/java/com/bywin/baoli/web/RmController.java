@@ -6,6 +6,7 @@ import com.bywin.baoli.clinet.rm.RmServiceClient;
 import com.bywin.baoli.clinet.rm.dto.CasDto;
 import com.bywin.baoli.clinet.rm.dto.CisDto;
 import com.bywin.baoli.clinet.rm.dto.SciDto;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -17,10 +18,10 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * 风控接口
  */
+@Slf4j
 @RestController
 @RequestMapping("/rm")
 public class RmController {
-    private static Logger log = LoggerFactory.getLogger(RmController.class);
 
     @Resource
     RmServiceClient rmServiceClient;
@@ -65,15 +66,11 @@ public class RmController {
      */
     @PostMapping("/credit/assessment")
     public JSONObject creditAssessment(HttpServletRequest request, @RequestBody CasDto casDto) {
-
         String token = request.getHeader("token");
-        JSONObject js = null;
-        if (StrUtil.isNotBlank(token)) {
-            js = rmServiceClient.creditAssessment(casDto, casUrl, token);
-        } else {
-            log.error("信用评估,token不可为空");
+        if (StrUtil.isBlank(token)) {
             throw new RuntimeException("token不可为空");
         }
+        JSONObject js = rmServiceClient.creditAssessment(casDto, casUrl, token);
         return js;
     }
 
@@ -86,13 +83,11 @@ public class RmController {
      */
     @PostMapping("/customer/sync")
     public JSONObject CustomerInformationSynchronization(HttpServletRequest request, @RequestBody SciDto custDto) {
-        JSONObject entries = null;
         String token = request.getHeader("token");
-        if (StrUtil.isNotBlank(token)) {
-            entries = rmServiceClient.customerInfoSync(custDto, cimUrl, token);
-        } else {
+        if (StrUtil.isBlank(token)) {
             throw new RuntimeException("token不可为空");
         }
+        JSONObject entries = rmServiceClient.customerInfoSync(custDto, cimUrl, token);
         return entries;
     }
 
@@ -106,13 +101,11 @@ public class RmController {
      */
     @PostMapping("/cis/sync")
     public JSONObject cisSync(HttpServletRequest request, @RequestBody CisDto cisDTO) {
-        JSONObject entries = null;
         String token = request.getHeader("token");
-        if (StrUtil.isNotBlank(token)) {
-            entries = rmServiceClient.csiSync(cisDTO, cisUrl, token);
-        } else {
+        if (StrUtil.isBlank(token)) {
             throw new RuntimeException("token不可为空");
         }
+        JSONObject entries = rmServiceClient.csiSync(cisDTO, cisUrl, token);
         return entries;
     }
 }

@@ -7,13 +7,15 @@ import java.util.Map;
 
 @Data
 public class NcDto {
-
+    //要生成的XML类型
     private String ncType;
 
     //组织编码
     public String orgCode;
+
     //根据表名(NC_EXCHANGE_SUPPLIER)获取最大流水号
     public String billId;
+
     //
     public String code;
     //合同名称或供应商名称
@@ -25,10 +27,15 @@ public class NcDto {
 
 
     public BigDecimal bchkzje;
+
     public boolean isPayInterest;
+
     public String accType;
+
     public Map<String, String> args;
+
     public String strPrepareDate;
+
     public String DCGroup;
 
 
