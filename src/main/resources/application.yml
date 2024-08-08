@@ -1,17 +1,10 @@
 #端口
 server:
-  port: 8888
+  port: 8085
 #环境
 spring:
   profiles:
     active: local
-    #Oracle数据库
-    datasource:
-      url: jdbc:oracle:thin:@192.168.6.102:1521:helowin
-      #
-      username: system
-      password: oracle
-      driver-class-name: oracle.jdbc.OracleDriver
 #日志
 logging:
   config: classpath:logback/logback-base.xml

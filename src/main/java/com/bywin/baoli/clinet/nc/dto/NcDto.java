@@ -33,13 +33,13 @@ public class NcDto {
     public String pid;
     //备注
     public String memo;
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public String replace;
 
     public String defdoc;
 
-
+    //凭证
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public BigDecimal bchkzje;
 
     public boolean isPayInterest;
@@ -51,6 +51,10 @@ public class NcDto {
     public String strPrepareDate;
 
     public String DCGroup;
+    //从表中获取UFINTERFACE_ITEM_INDEX表最大流水号
+    public String detailindex;
+
+    public String seqId;
 
 
 }

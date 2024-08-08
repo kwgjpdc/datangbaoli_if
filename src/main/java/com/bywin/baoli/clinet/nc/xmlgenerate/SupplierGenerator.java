@@ -1,6 +1,7 @@
 package com.bywin.baoli.clinet.nc.xmlgenerate;
 
 import cn.hutool.core.util.XmlUtil;
+import com.bywin.baoli.clinet.nc.dto.NcDto;
 import com.bywin.baoli.clinet.nc.vo.SupplierUfinterfaceVo;
 import com.bywin.baoli.utils.XmlUtils;
 
@@ -18,9 +19,9 @@ public class SupplierGenerator {
      * @param replace
      * @return
      */
-    public static String getStrXml(String code, String name, String billId, String replace) {
-        String xml = XmlUtils.objCvrt2Str(composeInterceVo(code, name, billId, replace));
-        return   XmlUtil.format(xml);
+    public static String getStrXml(NcDto ncDto) {
+        String xml = XmlUtils.objCvrt2Str(composeInterceVo(ncDto));
+        return XmlUtil.format(xml);
     }
 
 
@@ -33,14 +34,14 @@ public class SupplierGenerator {
      * @param replace
      * @return
      */
-    private static SupplierUfinterfaceVo composeInterceVo(String code, String name, String billId, String replace) {
+    private static SupplierUfinterfaceVo composeInterceVo(NcDto ncDto) {
         String orgCode = "null";
 
         SupplierUfinterfaceVo.Bill.BillHead billHead = SupplierUfinterfaceVo.Bill.BillHead.BillHeadBuilder.BillHead()
                 .pk_group("1")
                 .pk_org(orgCode)
-                .code(code)
-                .name(name)
+                .code(ncDto.getCode())
+                .name(ncDto.getName())
                 .supprop("0")
                 .pk_supplierclass("12")//TODO 供应商(银行) 基本分类
                 .iscustomer("N")
@@ -56,7 +57,7 @@ public class SupplierGenerator {
         SupplierUfinterfaceVo.Bill bill = SupplierUfinterfaceVo.Bill.BillBuilder.Bill()
                 .billhead(billHead)
                 //取refcode
-                .id(billId)
+                .id(ncDto.getBillId())
                 .build();
 
         SupplierUfinterfaceVo res = SupplierUfinterfaceVo.SupplierUfinterfaceVoBuilder.SupplierUfinterfaceVo()
@@ -66,7 +67,7 @@ public class SupplierGenerator {
                 .filename("")
                 .groupcode("1")
                 .isexchange("Y")
-                .replace(replace)
+                .replace(ncDto.getReplace())
                 .roottag("rootorg")
                 .sender("DTBL01")
                 .build();

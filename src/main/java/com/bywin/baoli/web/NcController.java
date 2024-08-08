@@ -57,20 +57,19 @@ public class NcController {
                 break;
             //银行账户
             case "B":
-                String clientXml = BankAccountGenerator.getStrXml(ncDto.getPkGroup(), ncDto.getName(), ncDto.getBillId(), ncDto.getReplace());
+                String clientXml = BankAccountGenerator.getStrXml(ncDto);
                 log.info("银行账户XML:{}", clientXml);
                 js = ncServiceClient.sendXml(clientXml, ncUrl, token);
                 break;
             //供应商
             case "C":
-                String supplierXml = SupplierGenerator.getStrXml(ncDto.getPkGroup(), ncDto.getName(), ncDto.getBillId(), ncDto.getReplace());
+                String supplierXml = SupplierGenerator.getStrXml(ncDto);
                 log.info("供应商XML:{}", supplierXml);
                 js = ncServiceClient.sendXml(supplierXml, ncUrl, token);
                 break;
             //凭证
             case "D":
-                String voucherXml = FundRepayVoucherGenerator.getGetRepayVoucherXmlStr(ncDto.getBchkzje(), ncDto.isPayInterest(),
-                        ncDto.getAccType(), ncDto.getArgs(), ncDto.getStrPrepareDate(), ncDto.getDCGroup());
+                String voucherXml = FundRepayVoucherGenerator.getGetRepayVoucherXmlStr(ncDto);
                 log.info("凭证XML:{}", voucherXml);
                 js = ncServiceClient.sendXml(voucherXml, ncUrl, token);
                 break;
